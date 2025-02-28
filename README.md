@@ -1,43 +1,124 @@
-📌 Project Description: AI-Powered News Category Classifier 🚀
-This project is an AI-powered news classification system that allows users to input a news headline and receive a predicted category along with probability scores for all possible categories.
+# **📰 AI-Powered News Category Classifier**  
 
-🔹 Key Features:
+## **🚀 Overview**  
+This project is an **AI-powered news classification system** that allows users to **input a news headline** and receive a **predicted category** along with **probability scores** for all possible categories. It is built using **Flask, Streamlit, and FastAI** to provide a seamless user experience with both a traditional web UI and an interactive dashboard.
 
-✅ User-Friendly UI – Enter a news title in a sleek, interactive interface.
+---
 
-✅ Real-Time AI Prediction – Classifies the news into categories like Business, Entertainment, Sports, and Tech using XGBoost.
+## **🔹 Features**  
+✅ **Flask Web App** – A structured, full-stack web interface for classification.  
+✅ **Streamlit Interactive UI** – A lightweight, interactive dashboard for real-time predictions.  
+✅ **FastAI Model Integration** – Leverages **FastAI** for efficient and accurate text classification.  
+✅ **Category Probability Visualization** – Displays confidence scores in a **bar chart**.  
+✅ **API Support** – Provides a RESTful API to integrate with other applications.  
 
-✅ Probability Visualization – Displays category confidence scores in a line chart for deeper insights.
+---
 
-✅ FastAPI Backend – Handles predictions efficiently using a trained machine learning model.
+## **🛠 Tech Stack**  
+- **Backend:** Flask (Python)  
+- **Interactive UI:** Streamlit  
+- **Machine Learning:** FastAI, Scikit-Learn, XGBoost  
+- **Data Processing:** TF-IDF, PCA, StandardScaler  
+- **Visualization:** Matplotlib  
 
-✅ Scalable & Optimized – Utilizes TF-IDF for text processing, PCA for dimensionality reduction, and XGBoost for high accuracy.
+---
 
+## **📌 How It Works**  
+1️⃣ **User enters a news title** in the UI (Flask or Streamlit).  
+2️⃣ **The model processes the text**, extracting meaningful features using TF-IDF.  
+3️⃣ **FastAI/XGBoost predicts the category**, returning the top prediction and probability scores.  
+4️⃣ **Results are displayed visually**, with probabilities shown in a **bar chart**.  
 
-🔹 How It Works:
+---
 
-1️⃣ User enters a news title in the input field.
+## **🚀 Setup & Installation**  
 
-2️⃣ The model processes the text, extracting meaningful features.
+### **🔹 1. Clone the Repository**  
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/news-classifier.git
+cd news-classifier
+```
 
-3️⃣ XGBoost predicts the category, returning the top category and probability scores.
+### **🔹 2. Install Dependencies**  
+Ensure you have Python **3.8+** installed, then run:  
+```bash
+pip install -r requirements.txt
+```
 
-4️⃣ Results are displayed visually, with probabilities mapped in a line chart.
+### **🔹 3. Run the Flask Web App**  
+```bash
+python app.py
+```
+Open **http://127.0.0.1:5000/** in your browser.
 
-🔹 Tech Stack:
+### **🔹 4. Run the Streamlit Dashboard**  
+```bash
+streamlit run streamlit_app.py
+```
+Open **http://localhost:8501/** in your browser.
 
-Frontend: React (Vite), TailwindCSS, Recharts (for data visualization)
+---
 
-Backend: FastAPI (Python)
+## **📡 API Usage (FastAPI)**
+You can also make predictions via an API using FastAPI.
 
-Machine Learning: Scikit-Learn, XGBoost, PCA, TF-IDF
+### **🔹 Start the API**
+```bash
+uvicorn api:app --host 0.0.0.0 --port 8000 --reload
+```
 
-🔹 Use Cases:
+### **🔹 Example API Request**
+```bash
+curl -X 'POST' \
+  'http://127.0.0.1:8000/predict/' \
+  -H 'Content-Type: application/json' \
+  -d '{"title": "Stock market crashes due to inflation"}'
+```
 
-🔹 News Aggregators – Classify articles into categories automatically.
+### **🔹 Example API Response**
+```json
+{
+    "category": "business",
+    "probabilities": {
+        "business": 0.78,
+        "entertainment": 0.12,
+        "sports": 0.07,
+        "technology": 0.03
+    }
+}
+```
 
-🔹 SEO & Content Sorting – Identify trending topics based on category.
+---
 
-🔹 Market Research – Analyze news sentiment for business insights.
+## **📊 Screenshots**
+### **Flask Web Interface**
+<img src="screenshots/flask_ui.png" width="600">
 
-This project bridges AI & real-world usability, making news classification faster, smarter, and more interactive! 🚀
+### **Streamlit Interactive Dashboard**
+<img src="screenshots/streamlit_ui.png" width="600">
+
+### **Category Probability Visualization**
+<img src="screenshots/probability_chart.png" width="600">
+
+---
+
+## **🛠 Future Enhancements**  
+🔹 Improve **FastAI model performance** with hyperparameter tuning.  
+🔹 Deploy on **AWS, Azure, or GCP** for production.  
+🔹 Add **support for multilingual news classification**.  
+🔹 Implement **real-time news trend analysis**.  
+
+---
+
+## **📜 License**  
+This project is licensed under the **MIT License**. Feel free to modify and use it for your own purposes.  
+
+---
+
+## **🤝 Contributing**  
+Pull requests are welcome! If you’d like to contribute, please **fork** the repository and submit a PR.  
+
+---
+
+### **💡 Star ⭐ this repo if you find it useful!**  
+Happy Coding! 🚀
