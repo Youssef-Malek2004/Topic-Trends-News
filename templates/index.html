@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Category Classifier</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input, button { padding: 10px; margin: 10px; }
+        img { margin-top: 20px; width: 400px; }
+    </style>
+</head>
+<body>
+    <h1>News Category Classifier</h1>
+    <form method="post">
+        <input type="text" name="title" placeholder="Enter news title" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if prediction %}
+        <h2>Predicted Category: {{ prediction.category }}</h2>
+        <img src="data:image/png;base64,{{ plot_url }}" alt="Probability Chart">
+    {% endif %}
+</body>
+</html>

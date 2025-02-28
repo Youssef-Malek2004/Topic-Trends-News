@@ -4,8 +4,8 @@ import joblib
 import numpy as np
 
 # Load model & label encoder
-pipeline = joblib.load("news_classifier.pkl")
-label_encoder = joblib.load("label_encoder.pkl")
+pipeline = joblib.load("models/news_classifier.pkl")
+label_encoder = joblib.load("models/label_encoder.pkl")
 
 # Define FastAPI app
 app = FastAPI()
